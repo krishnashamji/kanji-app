@@ -1,38 +1,246 @@
-.App {
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+/* ---------- UNIVERSAL ----------*/
+
+body {
+  background: #000000;
+  color: #FFFFFF;
+  padding: 8px;
+  display: flex;
+}
+
+.root-background {
+  height: 100vh;
+  width: 100%;
+}
+
+.background {
+  padding: 8px;
+  background: #121212;
+  display: flex;
+  gap: 8px;
+  border-radius: 12px;
+  height: 100%;
+}
+
+
+h3 {
+  font-family: "Noto Sans JP";
+  font-weight: normal;
+  font-size: 40px;
+  letter-spacing: 0px;
+}
+
+p {
+  font-family: "Noto Sans JP";
+  font-weight: medium;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+
+/* ---------- HEADER ----------*/
+
+.navigation {
+  background: #1E1E1E;
+  padding: 32px 8px;
+  border-radius: 8px;
   text-align: center;
+  width: 20%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+nav {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+ul {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 40px;
+  color: #A5A5A5;
+}
+
+a {
+  font-family: "Noto Sans JP";
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  padding: 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: hsl(0, 0%, 100%, 0.6);
+}
+
+a:link {
+  color: hsl(0, 0%, 100%, 0.6);
+  text-decoration: none;
+}
+
+a:visited {
+  color: hsl(0, 0%, 100%, 0.6);
+  text-decoration: none;
+}
+
+a:hover {
+  background: #3E2B25;
+  color: #F1764C;
+}
+
+a:active {
+  background: #3E2B25;
+  color: #F1764C;
+}
+
+.logo {
+  width: 50px;
+}
+
+.made-by {
+  color: #F1764C;
+}
+
+/* ---------- KANJI CHARACTERS ----------*/
+
+.kanji-container {
+  background: #1E1E1E;
+  padding: 8px;
+  display: flex;
+  border-radius: 8px;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.kanji-character {
+  width: 80px;
+  height: 80px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+
 }
 
-.App-link {
-  color: #61dafb;
+.kanji-character-button {
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  font-family: "Noto Sans JP";
+  font-weight: normal;
+  font-size: 40px;
+  letter-spacing: 0px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* ---------- MODEL ----------*/
+
+.model-background {
+  background: hsl(0, 0%, 7%, 0.8);
+  height: 100vh;
+  width: 100%;
+  /* width: 100vw; */
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.model-inner {
+  position: relative;
+  padding: 32px;
+  width: 100%;
+  max-width: 960px;
+  background: hsl(0, 0%, 12%);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-radius: 12px;
+  /* height: 500px; */
+
+}
+
+.model-inner .close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+}
+
+.labelAndContent{
+  display: flex;
+}
+
+.label{
+  width: 250px;
+}
+
+
+/* ---------- HIRAGANA ----------*/
+
+.hiragana-container {
+  background: #1E1E1E;
+  padding: 8px;
+  display: flex;
+  border-radius: 8px;
+  width: 100%;
+  flex-wrap: wrap;
+  font-family: "Noto Sans JP";
+  font-weight: normal;
+  font-size: 40px;
+  letter-spacing: 0px;
+}
+
+.hiragana-container table {
+  width: 100%;
 }

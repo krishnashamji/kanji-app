@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { KanjiPage } from "./pages/kanjiPage.js";
+import { HiraganaPage } from "./pages/hiraganaPage.js";
+import { KatakanaPage } from "./pages/katakanaPage.js";
+import { Route, Routes } from "react-router-dom";
+import NavBar from "./components/nav-bar.js";
 
+// UI GENERATION
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="background">
+      <NavBar/>
+      <Routes>
+        <Route path="/" element={<KanjiPage/>} />
+        <Route path="/HiraganaPage" element={<HiraganaPage/>} />
+        <Route path="/KatakanaPage" element={<KatakanaPage/>} />
+      </Routes>
     </div>
+
   );
 }
 
