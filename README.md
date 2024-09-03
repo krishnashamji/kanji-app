@@ -1,4 +1,4 @@
-### Kanji App
+# Kanji App
 
 ## Overview
 The Kanji Lookup App is a simple and intuitive web application designed to help users look up and learn Kanji characters. Whether you're a beginner or an advanced learner of Japanese, this app provides an easy way to search for Kanji by character, meaning, or reading.
